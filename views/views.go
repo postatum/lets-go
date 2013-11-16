@@ -80,6 +80,7 @@ func LikePersonResource(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	fmt.Fprint(w, JsonResponse{"success": "true"})
 }
 
