@@ -9,6 +9,7 @@ func ConnectHandlers() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static/"))))
 	http.HandleFunc("/api/people", views.PeopleResource)
 	http.HandleFunc("/api/people/add", views.PersonAddResource)
+	http.HandleFunc("/api/people/like", views.LikePersonResource)
 	http.HandleFunc("/", views.PeopleView)
 }
 
