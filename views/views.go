@@ -13,7 +13,7 @@ const (
 	mongourl   = "127.0.0.1:27017"
 	dbname     = "godb"
 	collection = "people"
-	PER_PAGE   = 5
+	perpage   = 5
 )
 
 type JsonResponse map[string]interface{}
@@ -31,8 +31,8 @@ func PeopleResource(w http.ResponseWriter, r *http.Request) {
 	defer session.Close()
 	collection := session.DB(dbname).C(collection)
 
-	people := make([]map[string]interface{}, PER_PAGE)
-	_ = collection.Find(bson.M{}).Sort("-_id").Limit(PER_PAGE).All(&people)
+	people := make([]map[string]interface{}, perpage)
+	_ = collection.Find(bson.M{}).Sort("-_id").Limit(perpage).All(&people)
 
 	w.Header().Set("Content-Type", "application/json")
 	fmt.Fprint(w, JsonResponse{"people": people})
