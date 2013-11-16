@@ -56,7 +56,7 @@ func PersonAddResource(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, JsonResponse{"success": "true"})
 }
 
-func LikePersonResource(w http.ResponseWriter, r *http.Request) {
+func PersonLikeResource(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		return
 	}
