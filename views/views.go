@@ -85,7 +85,7 @@ func LikePersonResource(w http.ResponseWriter, r *http.Request) {
 }
 
 func PeopleView(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("templates/index.html")
+	t, _ := template.ParseFiles("templates/people.html")
 
 	context := make(map[string]interface{})
 
