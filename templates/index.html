@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hey there</title>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <ul class="json-container well">
+      </ul>
+
+      <form class="form-inline well" id="js-add-person" role="form" action="/api/people/add">
+
+        <div class="form-group">
+          <label class="sr-only" for="name-input">Email address</label>
+          <input type="text" class="form-control" id="name-input" placeholder="Name" name="name">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="email-input">Email address</label>
+          <input type="email" class="form-control" id="email-input" placeholder="Email" name="email">
+        </div>
+        <button type="submit" class="btn btn-default">Send</button>
+        <div class="error"></div>
+      </form>
+
+    </div>
+
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/static/js/people.js"></script>
+  </body>
+</html>
