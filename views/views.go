@@ -6,8 +6,7 @@ import (
 )
 
 func IndexView(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("static/templates/index.html")
-
+	t, _ := template.ParseFiles("static/app/index.html")
 	context := make(map[string]interface{})
 
 	w.Header().Set("Content-type", "text/html")
