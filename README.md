@@ -1,4 +1,4 @@
 lets-go
 =======
 
-Playing with Go.
+Playing with Go & AngularJS.

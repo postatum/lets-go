@@ -1,16 +1,19 @@
 package main
 
 import (
-	"lets-go/views"
+	"views"
+    "api"
 	"net/http"
 )
 
 func ConnectHandlers() {
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static/"))))
-	http.HandleFunc("/api/people", views.PeopleResource)
-	http.HandleFunc("/api/people/add", views.PersonAddResource)
-	http.HandleFunc("/api/people/like", views.PersonLikeResource)
-	http.HandleFunc("/", views.PeopleView)
+    http.HandleFunc("/", views.IndexView)
+
+	http.HandleFunc("/api/people", api.PeopleResource)
+	http.HandleFunc("/api/people/add", api.PersonAddResource)
+	http.HandleFunc("/api/people/like", api.PersonLikeResource)
+
+    http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static/"))))
 }
 
 func main() {
