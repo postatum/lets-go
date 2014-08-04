@@ -1,9 +1,9 @@
 package main
 
 import (
-	"api"
+	"lets-go/api"
+	"lets-go/views"
 	"net/http"
-	"views"
 )
 
 func ConnectHandlers() {
